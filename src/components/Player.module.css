@@ -1,0 +1,383 @@
+/* Player.module.css */
+.player {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 10, 35, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 15px 25px;
+  width: 700px;
+  max-width: 90%;
+  box-shadow: 0 0 20px rgba(171, 71, 188, 0.3);
+  transition: height 0.4s ease, width 0.4s ease, bottom 0.4s ease;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.expanded {
+  height: 90vh;
+  width: 700px;
+  bottom: 20px;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 30px;
+}
+
+.playerContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.playerHeader {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.minimizeBtn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #ECEFF1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.minimizeBtn:hover {
+  color: #AB47BC;
+  transform: scale(1.1);
+}
+
+.albumArt {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px 0;
+  position: relative;
+}
+
+.artPulse {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.waveform {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.waveformBar {
+  flex: 1;
+  border-radius: 2px;
+  transition: height 0.2s ease;
+}
+
+.infoAndControls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.player.expanded .infoAndControls {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.musicInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.songInfoWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  gap: 15px;
+  max-width: 100%;
+}
+
+.songName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-grow: 1;
+  max-width: 450px;
+  display: inline-block;
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
+  animation-play-state: running;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+.moodName {
+  font-size: 16px;
+  color: #ECEFF1;
+  margin: 5px 0;
+}
+
+.moodIcon {
+  font-size: 26px;
+}
+
+.progressBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.progressBar span {
+  font-size: 14px;
+  color: #ECEFF1;
+  min-width: 40px;
+}
+
+.progressInput {
+  flex-grow: 1;
+  height: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  appearance: none;
+  background: #ECEFF1;
+}
+
+.progressInput::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(171, 71, 188, 0.5);
+  cursor: pointer;
+}
+
+.controlButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+.controlBtn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(171, 71, 188, 0.3);
+}
+
+.controlBtn svg {
+  font-size: 18px;
+}
+
+.controlBtn:hover {
+  background: linear-gradient(45deg, #AB47BC, #F44336);
+  color: #FFFFFF;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(244, 67, 54, 0.8);
+}
+
+.activeControl {
+  background: linear-gradient(45deg, #1976D2, #AB47BC);
+  box-shadow: 0 0 15px rgba(171, 71, 188, 0.5);
+}
+
+/* Extended Controls */
+.controlsExtended {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.volumeControl,
+.moodIntensityControl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.volumeControl svg {
+  font-size: 18px;
+  color: #ECEFF1;
+}
+
+.volumeControl span,
+.moodIntensityControl span {
+  font-size: 14px;
+  color: #ECEFF1;
+}
+
+.volumeSlider,
+.moodIntensitySlider {
+  width: 150px;
+  height: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  appearance: none;
+  background: #ECEFF1;
+}
+
+.volumeSlider::-webkit-slider-thumb,
+.moodIntensitySlider::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(171, 71, 188, 0.5);
+  cursor: pointer;
+}
+
+/* Lyrics Section */
+.lyricsSection {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.lyricsTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.lyricsContent {
+  font-size: 14px;
+  color: #ECEFF1;
+  white-space: pre-wrap;
+  text-align: center;
+}
+
+/* Song Queue Styles */
+.queueSection {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.queueTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.queueList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.queueItem {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.queueItem:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.queueSongName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.queueArtist {
+  font-size: 12px;
+  color: #ECEFF1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.queueEmpty {
+  font-size: 14px;
+  color: #ECEFF1;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Animations */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}

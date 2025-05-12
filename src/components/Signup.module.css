@@ -1,0 +1,266 @@
+/* Signup.module.css */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0A0A23 0%, #000000 100%); /* Navy gradient matching login page */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Wave Background */
+.waveBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.waveLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23AB47BC' fill-opacity='0.3' d='M0,160L48,149.3C96,139,192,117,288,122.7C384,128,480,160,576,181.3C672,203,768,213,864,202.7C960,192,1056,160,1152,149.3C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x bottom;
+  animation: wave 12s linear infinite;
+}
+
+.waveLayer:nth-child(2) {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231976D2' fill-opacity='0.3' d='M0,96L48,106.7C96,117,192,139,288,144C384,149,480,139,576,122.7C672,107,768,85,864,101.3C960,117,1056,171,1152,181.3C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x bottom;
+  animation: wave 18s linear infinite reverse;
+}
+
+/* Signup Box */
+.box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 10;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.title {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(45deg, #1976D2, #AB47BC, #F44336); /* Matching login page gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(171, 71, 188, 0.5);
+}
+
+.tagline {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  color: #ECEFF1; /* Soft gray for balance */
+  margin-bottom: 24px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.error {
+  color: #F44336; /* Red for excitement/error */
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 16px;
+  text-shadow: 0 0 5px rgba(244, 67, 54, 0.3);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  text-align: left;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.input {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  border-color: #AB47BC; /* Purple for creativity */
+  box-shadow: 0 0 15px rgba(171, 71, 188, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.button {
+  margin-top: 16px;
+  background: linear-gradient(45deg, #1976D2, #AB47BC); /* Blue to purple gradient */
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  border: none;
+  padding: 12px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.button:hover {
+  background: linear-gradient(45deg, #AB47BC, #F44336); /* Purple to red gradient */
+  box-shadow: 0 0 20px rgba(244, 67, 54, 0.5);
+}
+
+.buttonText {
+  display: inline-block;
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #FFFFFF;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.login {
+  color: #ECEFF1;
+  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+}
+
+.link {
+  color: #AB47BC; /* Purple for creativity */
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: #F44336; /* Red underline on hover */
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.link:hover {
+  color: #F44336; /* Red on hover */
+  text-shadow: 0 0 5px rgba(244, 67, 54, 0.5);
+}
+
+/* Mood Preview */
+.moodPreview {
+  margin-bottom: 20px;
+}
+
+.moodEmoji {
+  font-size: 2.5rem;
+  text-shadow: 0 0 15px rgba(171, 71, 188, 0.5);
+}
+
+/* Soundwave Animation */
+.buttonWrapper {
+  position: relative;
+}
+
+.soundwave {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.soundwave span {
+  width: 4px;
+  height: 10px;
+  background: #AB47BC; /* Purple for creativity */
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+.soundwave span:nth-child(1) { height: 8px; }
+.soundwave span:nth-child(2) { height: 12px; }
+.soundwave span:nth-child(3) { height: 16px; }
+.soundwave span:nth-child(4) { height: 12px; }
+.soundwave span:nth-child(5) { height: 8px; }
+
+/* Custom Cursor */
+.customCursor {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #AB47BC; /* Purple border */
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(171, 71, 188, 0.5);
+}
+
+/* Animations */
+@keyframes wave {
+  0% { background-position: 0 bottom; }
+  100% { background-position: 1440px bottom; }
+}

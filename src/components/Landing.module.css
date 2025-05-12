@@ -1,0 +1,428 @@
+/* Landing.module.css */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0A0A23 0%, #000000 100%); /* Navy gradient matching login/signup */
+  position: relative;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #FFFFFF; /* White for body text */
+  overflow-x: hidden;
+  cursor: none; /* Hide default cursor */
+}
+
+/* Custom Music-Themed Cursor */
+.customCursor {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #AB47BC; /* Purple note */
+  text-shadow: 0 0 15px rgba(171, 71, 188, 0.8);
+  pointer-events: none;
+}
+
+/* Navigation Bar */
+.navBar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+  background: rgba(10, 10, 35, 0.8); /* Dark navy with transparency */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 10px 30px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 5;
+  box-shadow: 0 0 20px rgba(171, 71, 188, 0.3); /* Purple glow */
+}
+
+.navItem {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ECEFF1; /* Soft gray */
+  cursor: none; /* Ensure custom cursor applies */
+  transition: all 0.3s ease;
+}
+
+.navItem:hover {
+  color: #AB47BC; /* Purple on hover */
+  text-shadow: 0 0 15px rgba(171, 71, 188, 0.7);
+  transform: scale(1.05);
+}
+
+/* Section Styles */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 50px 20px;
+}
+
+.sectionContent {
+  text-align: center;
+  max-width: 900px;
+}
+
+.sectionTitle {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(45deg, #1976D2, #AB47BC, #F44336); /* Matching gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 30px;
+  text-shadow: 0 0 15px rgba(171, 71, 188, 0.7);
+  letter-spacing: 2px;
+}
+
+.sectionText {
+  font-size: 1.3rem;
+  color: #ECEFF1; /* Soft gray */
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* Wave Background */
+.waveBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.waveLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23AB47BC' fill-opacity='0.3' d='M0,160L48,149.3C96,139,192,117,288,122.7C384,128,480,160,576,181.3C672,203,768,213,864,202.7C960,192,1056,160,1152,149.3C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x bottom;
+  animation: wave 12s linear infinite;
+}
+
+.waveLayer:nth-child(2) {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231976D2' fill-opacity='0.3' d='M0,96L48,106.7C96,117,192,139,288,144C384,149,480,139,576,122.7C672,107,768,85,864,101.3C960,117,1056,171,1152,181.3C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x bottom;
+  animation: wave 18s linear infinite reverse;
+}
+
+/* Soundwave Visualization */
+.soundwaveBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  z-index: 1;
+  width: 100%;
+  max-width: 600px;
+}
+
+.soundwaveBar {
+  width: 8px;
+  height: 50px;
+  background: linear-gradient(180deg, #1976D2, #AB47BC); /* Blue to purple gradient */
+  border-radius: 4px;
+  opacity: 0.6;
+  animation: soundwavePulse 1.5s infinite ease-in-out;
+}
+
+.soundwaveBar:nth-child(2) { animation-delay: 0.2s; }
+.soundwaveBar:nth-child(3) { animation-delay: 0.4s; }
+.soundwaveBar:nth-child(4) { animation-delay: 0.6s; }
+.soundwaveBar:nth-child(5) { animation-delay: 0.8s; }
+.soundwaveBar:nth-child(6) { animation-delay: 1.0s; }
+.soundwaveBar:nth-child(7) { animation-delay: 1.2s; }
+
+/* Floating Musical Notes */
+.notesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.musicalNote {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #F44336; /* Red for excitement */
+  text-shadow: 0 0 10px rgba(244, 67, 54, 0.7);
+}
+
+/* Main Content (Hero Section) */
+.content {
+  text-align: center;
+  z-index: 4;
+}
+
+.title {
+  font-size: 10rem; /* Larger for impact */
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  background: linear-gradient(45deg, #1976D2, #AB47BC, #F44336); /* Matching gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 30px rgba(171, 71, 188, 0.5),
+               0 0 20px rgba(244, 67, 54, 0.5);
+}
+
+.tagline {
+  font-size: 2.5rem;
+  color: #ECEFF1; /* Soft gray */
+  margin: 40px 0 60px;
+  letter-spacing: 5px;
+  text-shadow: 0 0 12px rgba(171, 71, 188, 0.5);
+  font-weight: 400;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.buttonPrimary,
+.buttonSecondary {
+  position: relative;
+  padding: 20px 60px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 60px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  cursor: none; /* Ensure custom cursor applies */
+}
+
+.buttonPrimary {
+  background: linear-gradient(45deg, #1976D2, #AB47BC); /* Blue to purple gradient */
+  color: #FFFFFF;
+  border: none;
+  box-shadow: 0 0 40px rgba(171, 71, 188, 0.7);
+}
+
+.buttonPrimary:hover {
+  background: linear-gradient(45deg, #AB47BC, #F44336); /* Purple to red gradient */
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(244, 67, 54, 0.9);
+}
+
+.buttonSecondary {
+  background: transparent;
+  border: 2px solid #ECEFF1; /* Soft gray border */
+  color: #ECEFF1;
+}
+
+.buttonSecondary:hover {
+  background: rgba(171, 71, 188, 0.2); /* Purple background on hover */
+  color: #FFFFFF;
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(171, 71, 188, 0.7);
+}
+
+.buttonRipple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(171, 71, 188, 0.3) 10%, transparent 70%);
+  z-index: -1;
+}
+
+/* Constellation Forming "Moodify" */
+.constellation {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 4;
+}
+
+.constellationLetter {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  position: relative;
+  text-shadow: 0 0 12px rgba(171, 71, 188, 0.6);
+}
+
+.star {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #AB47BC; /* Purple stars */
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(171, 71, 188, 0.9);
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+.star:nth-child(2) { animation-delay: 0.4s; }
+.star:nth-child(3) { animation-delay: 0.8s; }
+.star:nth-child(4) { animation-delay: 1.2s; }
+.star:nth-child(5) { animation-delay: 1.6s; }
+
+/* Features Section */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: none; /* Ensure custom cursor applies */
+}
+
+.featureCard h3 {
+  font-size: 1.5rem;
+  background: linear-gradient(45deg, #1976D2, #AB47BC); /* Blue to purple gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(171, 71, 188, 0.5);
+}
+
+.featureCard p {
+  font-size: 1rem;
+  color: #ECEFF1; /* Soft gray */
+  font-weight: 400;
+}
+
+/* Contact Form */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formGroup label {
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.formGroup input,
+.formGroup textarea {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  cursor: none; /* Ensure custom cursor applies */
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #AB47BC; /* Purple border on focus */
+  box-shadow: 0 0 12px rgba(171, 71, 188, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.formGroup textarea {
+  min-height: 150px;
+  resize: none;
+}
+
+.submitButton {
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #1976D2, #AB47BC); /* Blue to purple gradient */
+  color: #FFFFFF;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: none; /* Ensure custom cursor applies */
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(171, 71, 188, 0.5);
+}
+
+.submitButton:hover {
+  background: linear-gradient(45deg, #AB47BC, #F44336); /* Purple to red gradient */
+  box-shadow: 0 0 30px rgba(244, 67, 54, 0.8);
+}
+
+/* Back to Top Button */
+.backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: rgba(10, 10, 35, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #ECEFF1;
+  cursor: none; /* Ensure custom cursor applies */
+  z-index: 5;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(171, 71, 188, 0.3);
+}
+
+.backToTop:hover {
+  background: #AB47BC; /* Purple on hover */
+  color: #FFFFFF;
+  box-shadow: 0 0 25px rgba(171, 71, 188, 0.9);
+}
+
+/* Animations */
+@keyframes wave {
+  0% { background-position: 0 bottom; }
+  100% { background-position: 1440px bottom; }
+}
+
+@keyframes twinkle {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.6); opacity: 1; }
+}
+
+@keyframes soundwavePulse {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(2); }
+}
