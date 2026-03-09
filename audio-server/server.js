@@ -7,7 +7,7 @@ const { spawn } = require('child_process');
 const app = express();
 app.use(cors());
 
-const YT_API_KEY = 'AIzaSyCFEazl5RpKorKnbOx0XTnH5-Lz4vEyFU4'; // Replace with YouTube API key
+const YT_API_KEY = ''; // Replace with YouTube API key
 
 const searchOpts = {
   maxResults: 50, // Increase to 50 to have more results to filter
@@ -329,4 +329,5 @@ app.post('/skip', async (req, res) => {
 
 app.listen(8000, () => {
   console.log('✅ Audio stream server running on http://localhost:8000');
+
 });
