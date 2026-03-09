@@ -611,17 +611,6 @@ Frontend - Display Results & Play Audio
 - [ ] Emotion recognition from facial expressions
 - [ ] Haptic feedback for mood reinforcement
 
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
 
 ### Development Guidelines
 - Follow PEP 8 for Python code
@@ -646,30 +635,7 @@ Moodify/
 
 ---
 
-## 🔗 Related Links
 
-- [Project Repository](https://github.com/avneetxsingh/Moodify)
-- [Mood Detection Paper](https://example.com)
-- [Music Features Explained](https://example.com)
-
----
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
----
-
-## 👨‍💻 Author
-
-**Avneet Singh**  
-Full-Stack Developer | AI/ML Enthusiast | Music Tech Innovator
-
-- 🌐 Portfolio: [avneetsinghportfolio.vercel.app](https://avneetsinghportfolio.vercel.app)
-- 💼 LinkedIn: [linkedin.com/in/avneet-singh](https://linkedin.com/in/avneet-singh)
-- 🐙 GitHub: [@avneetxsingh](https://github.com/avneetxsingh)
-
----
 
 ## 🙏 Acknowledgments
 
@@ -709,7 +675,7 @@ For questions, issues, or suggestions:
 
 ---
 
-**Last Updated**: March 2026  
+**Last Updated**: Dec 2024   
 **Status**: ✅ Active Development
 
 ---
